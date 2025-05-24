@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Loja Tech - Produtos gamers e eletrônicos de alta performance com ótimos preços."/>
+    <title>Loja Tech</title>
+    <link rel="stylesheet" href="Loja-Tech.css" />
+    <link rel="icon" href="WhatsApp Image 2025-05-23 at 10.00.25.jpeg" type="image/jpeg" sizes="192x192" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Loja Tech</h1>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar produtos..." id="searchInput" />
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#" data-category="all" class="active">Todos</a></li>
+                <li><a href="#" data-category="fone">Fones</a></li>
+                <li><a href="#" data-category="teclado">Teclados</a></li>
+                <li><a href="#" data-category="mouse">Mouse</a></li>
+                <li><a href="#" data-category="controle">Controles</a></li>
+                <li><a href="#" data-category="pc">PC Gamer</a></li>
+                <li><a href="#" data-category="cadeira">Cadeiras</a></li>
+                <li><a href="#" data-category="microfone">Microfones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="WhatsApp Image 2025-05-23 at 10.00.25.jpeg" alt="Banner da Loja Tech" />
+        <div class="banner-text">
+            <h2>Bem-vindo à Loja Tech!</h2>
+            <p>Encontre os melhores produtos gamers e eletrônicos com preços incríveis.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="products" id="produtos">
+
+            <div class="product" data-name="fone bluetooth" data-category="fone">
+                <img src="Fones-02.jpg" alt="Fone Bluetooth" />
+                <h2>Fone Bluetooth</h2>
+                <p>Som de alta qualidade sem fios.</p>
+                <p>R$ 149,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="teclado sem fio" data-category="teclado">
+                <img src="Teclado-02.jpg" alt="Teclado Gamer" />
+                <h2>Teclado Sem Fio</h2>
+                <p>Teclado Gamer à prova d'água.</p>
+                <p>R$ 149,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="controle xbox" data-category="controle">
+                <img src="controle-02.png" alt="Controle de Xbox X\S" />
+                <h2>Controle de Xbox X\S</h2>
+                <p>Analógicos magnéticos de alta performance.</p>
+                <p>R$ 349,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="mouse gamer" data-category="mouse">
+                <img src="Mouse.jfif" alt="Mouse Gamer" />
+                <h2>Mouse Gamer</h2>
+                <p>Sensibilidade de alta qualidade.</p>
+                <p>R$ 169,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="mouse padding" data-category="mouse">
+                <img src="Mouse Padding.jfif" alt="Mouse Padding" />
+                <h2>Mouse Padding</h2>
+                <p>Alta durabilidade com base antiderrapante.</p>
+                <p>R$ 89,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="pc gamer" data-category="pc">
+                <img src="Pc.jfif" alt="PC Gamer" />
+                <h2>PC Gamer</h2>
+                <p>Desempenho de alta qualidade para jogos.</p>
+                <p>R$ 4.999,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="cadeira gamer" data-category="cadeira">
+                <img src="cadeira.jfif" alt="Cadeira Gamer" />
+                <h2>Cadeira Gamer</h2>
+                <p>Conforto e ergonomia para longas sessões.</p>
+                <p>R$ 1.499,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="teclado samurai" data-category="teclado">
+                <img src="teclado gamer personalizado de samurai.jfif" alt="Teclado Gamer Personalizado de Samurai" />
+                <h2>Teclado Gamer Samurai</h2>
+                <p>Key Switches Mecânicos de Alta Performance.</p>
+                <p>R$ 299,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+
+            <div class="product" data-name="microfone" data-category="microfone">
+                <img src="Microfone.jfif" alt="Microfone" />
+                <h2>Microfone</h2>
+                <p>Captação de áudio de alta qualidade.</p>
+                <p>R$ 499,90</p>
+                <a href="cadastro.html" class="buy-button">Comprar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Loja Tech. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Busca por nome dos produtos
+        const searchInput = document.getElementById('searchInput');
+        const products = document.querySelectorAll('.product');
+        const categoryLinks = document.querySelectorAll('.nav a');
+
+        searchInput.addEventListener('input', function () {
+            const term = searchInput.value.toLowerCase();
+
+            products.forEach(prod => {
+                const name = prod.dataset.name;
+                const categoryActive = document.querySelector('.nav a.active').dataset.category;
+
+                // Produto deve corresponder à busca E categoria ativa
+                const matchName = name.includes(term);
+                const matchCategory = categoryActive === 'all' || prod.dataset.category === categoryActive;
+
+                prod.style.display = matchName && matchCategory ? 'block' : 'none';
+            });
+        });
+
+        // Filtro por categoria
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove classe active
+                categoryLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+                const term = searchInput.value.toLowerCase();
+
+                products.forEach(product => {
+                    const name = product.dataset.name;
+                    const prodCategory = product.dataset.category;
+
+                    const matchName = name.includes(term);
+                    const matchCategory = category === 'all' || prodCategory === category;
+
+                    product.style.display = matchName && matchCategory ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!--
+    Este código HTML representa uma página de loja online chamada "Loja Tech". 
+    A página inclui um cabeçalho com um título, uma barra de pesquisa e um menu de navegação com categorias de produtos. 
+    A seção principal exibe uma lista de produtos com imagens, descrições e preços, além de botões de compra. 
+    O rodapé contém informações de direitos autorais.
